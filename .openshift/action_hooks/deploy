@@ -5,6 +5,7 @@
 # ruby, etc.
 
 source $OPENSHIFT_HOMEDIR/python/virtenv/bin/activate
+export PYTHONPATH=$PYTHONPATH:"$OPENSHIFT_REPO_DIR"wsgi/snowy
 
 if [ ! -f $OPENSHIFT_DATA_DIR/db.sqlite3 ]
 then
