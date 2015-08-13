@@ -27,4 +27,4 @@ EMAIL_PORT = 1025
 #MODERATE_NEW_USERS = True
 
 # Uncomment for HTTPS
-#URI_SCHEME = 'https'
+URI_SCHEME = 'https'
