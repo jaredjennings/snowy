@@ -9,5 +9,5 @@ setup(
     author='Jared Jennings',
     author_email='jjennings@fastmail.fm',
     url='https://github.com/jaredjennings/snowy',
-    install_requires=['Django<=1.8', 'lxml', 'pytz', 'dateutil', 'openid', 'South'],
+    install_requires=['Django<=1.4', 'lxml', 'pytz', 'dateutil', 'openid', 'South'],
 )
