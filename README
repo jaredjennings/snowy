@@ -2,4 +2,13 @@ Snowy is Tomboy's best friend online.
 
 Snowy is a web-based viewer for your Tomboy notes written in Django.
 
-See INSTALL for dependencies and other requirements.
+Snowy was written a long time ago and development has ceased. But now you can
+run it on OpenShift.
+
+Create a new application of type Python 2.7. Tell it to use
+https://github.com/jaredjennings/snowy.git as the code to begin from. Tell it
+to use PostgreSQL 9.2 as the database. Once your app is deployed, you'll need
+to rhc ssh into it, and run manage.py createsuperuser. Once you have a Django
+superuser, you can visit https://yourappname-yourdomain.rhcloud.com/admin, use
+the superuser login, and create yourself a normal user under Users. Then tell
+your Tomboy, Tomdroid or Conboy to use your new server to sync with!
