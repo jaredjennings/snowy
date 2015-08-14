@@ -125,7 +125,7 @@ class NotesHandler(BaseHandler):
 
     @catch_and_return(ObjectDoesNotExist, rc.NOT_HERE)
     @catch_and_return(KeyError, rc.BAD_REQUEST)
-    @transaction.atomic
+    @transaction.commit_on_success
     def update(self, request, username):
         def clean_date(date):
             """Set tzinfo=None because some DB engines do not accept

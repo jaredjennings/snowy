@@ -225,7 +225,7 @@ class VersionAdmin(admin.ModelAdmin):
         extra_context = extra_context or {}
         context.update(extra_context)
         return self.render_revision_form(request, obj, version, revision, context, self.recover_form_template, "../../%s/" % object_id)
-    recover_view = transaction.atomic(revision.create_on_success(recover_view))
+    recover_view = transaction.commit_on_success(revision.create_on_success(recover_view))
         
     def revision_view(self, request, object_id, version_id, extra_context=None):
         """Displays the contents of the given revision."""
@@ -241,12 +241,12 @@ class VersionAdmin(admin.ModelAdmin):
         extra_context = extra_context or {}
         context.update(extra_context)
         return self.render_revision_form(request, obj, version, revision, context, self.revision_form_template, "../../")
-    revision_view = transaction.atomic(revision.create_on_success(revision_view))
+    revision_view = transaction.commit_on_success(revision.create_on_success(revision_view))
     
     # Wrap the data-modifying views in revisions.
-    add_view = transaction.atomic(revision.create_on_success(admin.ModelAdmin.add_view))
-    change_view = transaction.atomic(revision.create_on_success(admin.ModelAdmin.change_view))
-    delete_view = transaction.atomic(revision.create_on_success(admin.ModelAdmin.delete_view))
+    add_view = transaction.commit_on_success(revision.create_on_success(admin.ModelAdmin.add_view))
+    change_view = transaction.commit_on_success(revision.create_on_success(admin.ModelAdmin.change_view))
+    delete_view = transaction.commit_on_success(revision.create_on_success(admin.ModelAdmin.delete_view))
     
     def changelist_view(self, request, extra_context=None):
         """Renders the modified change list."""
