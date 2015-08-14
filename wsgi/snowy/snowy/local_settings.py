@@ -6,12 +6,12 @@ TEMPLATE_DEBUG = DEBUG
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(os.path.dirname(__file__), "snowy.db"),
-#        'USER': '',            # Not used with sqlite3.
-#        'PASSWORD': '',        # Not used with sqlite3.
-#        'HOST': '',            # Set to empty string for localhost. Not used with sqlite3.
-#        'PORT': ''             # Set to empty string for default. Not used with sqlite3.
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'snowy'
+        'USER': os.getenv('OPENSHIFT_POSTGRESQL_DB_USERNAME'),
+        'PASSWORD': os.getenv('OPENSHIFT_POSTGRESQL_DB_PASSWORD'),
+        'HOST': os.getenv('OPENSHIFT_POSTGRESQL_DB_HOST'),
+        'PORT': os.getenv('OPENSHIFT_POSTGRESQL_DB_PORT'),
     }
 }
 
