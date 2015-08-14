@@ -30,4 +30,3 @@ EMAIL_PORT = 1025
 URI_SCHEME = 'https'
 
 SECRET_KEY = os.getenv('OPENSHIFT_GEAR_UUID')
-
