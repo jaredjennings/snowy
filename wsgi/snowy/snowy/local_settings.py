@@ -28,3 +28,5 @@ EMAIL_PORT = 1025
 
 # Uncomment for HTTPS
 URI_SCHEME = 'https'
+
+SECRET_KEY = os.getenv('OPENSHIFT_GEAR_UUID')
