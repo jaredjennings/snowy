@@ -18,5 +18,3 @@ else
     python "$OPENSHIFT_REPO_DIR"wsgi/snowy/manage.py syncdb --noinput
 fi
 
-echo "Executing 'python $OPENSHIFT_REPO_DIR/wsgi/snowy/manage.py collectstatic --noinput'"
-python "$OPENSHIFT_REPO_DIR"wsgi/snowy/manage.py collectstatic --noinput
